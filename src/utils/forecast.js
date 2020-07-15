@@ -5,18 +5,20 @@ const forecast = (lat, long, callback) => {
 
   request({ url, json: true }, (error, { body }) => {
     if (error) {
-      callback('Unable to connect', undefined, undefined);
+      callback('Unable to connect', undefined);
     } else if (body.error) {
-      callback(body.error.info, undefined, undefined);
+      callback(body.error.info, undefined);
     } else {
       const { temperature, feelslike } = body.current;
+      const { location } = body;
       const data = {
+        location,
         weather: body.current.weather_descriptions[0],
         weatherIcon: body.current.weather_icons[0],
         temperature,
         feelslike,
       };
-      callback(undefined, `The weather right now is ${data.weather}. The temperaute is ${data.temperature}º and it's feels like ${data.feelslike}º`, data.weatherIcon);
+      callback(undefined, `The weather right now is ${data.weather}. The temperaute is ${data.temperature}º and it's feels like ${data.feelslike}º`, data.weatherIcon, location);
     }
   });
 };

@@ -69,3 +69,9 @@ header a {
   font-weight: 100;
   font-size: .9rem;
 }
+
+.weather-card .time {
+  font-size: .7rem;
+  margin: 0;
+  color: #6b6b6b;
+}

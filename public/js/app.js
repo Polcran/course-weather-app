@@ -3,6 +3,7 @@ const search = document.querySelector('input');
 const weatherCard = document.querySelector('.weather-card');
 const locationInfo = document.querySelector('.location');
 const forecastInfo = document.querySelector('.forecast');
+const localTime = document.querySelector('.time');
 
 weatherForm.addEventListener('submit', (event) => {
   event.preventDefault();
@@ -28,6 +29,7 @@ weatherForm.addEventListener('submit', (event) => {
 
       locationInfo.textContent = data.location;
       forecastInfo.textContent = data.forecast;
+      localTime.textContent = data.locationData.localtime;
       weatherCard.classList.add('show');
     });
   });
