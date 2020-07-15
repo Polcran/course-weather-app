@@ -1,0 +1,22 @@
+{
+    "env": {
+        "es6": true,
+        "browser": true,
+        "commonjs": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "airbnb-base"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "rules": {
+        "consistent-return": 0,
+        "no-shadow": 0
+    },
+    "globals": {
+        "__dirname": true
+    }
+}
