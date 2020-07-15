@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 const weatherCard = document.querySelector('.weather-card');
